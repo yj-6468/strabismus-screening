@@ -1,0 +1,23 @@
+random_seed: 20260824
+face_landmarker_model: models/face_landmarker.task
+maximum_faces: 2
+event:
+  sample_stride: 1
+  median_window_frames: 5
+  cover_on_threshold: 0.58
+  cover_off_threshold: 0.40
+  minimum_cover_frames: 4
+  transition_guard_frames: 2
+  max_landmark_hold_frames: 45
+motion:
+  pre_window_frames: 6
+  early_post_frames: 3
+  plateau_start_frames: 5
+  plateau_end_frames: 15
+  minimum_valid_cycles: 1
+  maximum_head_pose_change: 0.12
+calibration:
+  enabled: false
+  mode: dataset_supervised
+  target_angles_degrees: []
+  camera_light_available: false

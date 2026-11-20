@@ -1,0 +1,11 @@
+# Whitelist: only the pipeline (which has its own whitelist .gitignore) and this folder's README are tracked.
+# data/ (patient recordings), reference/ (third-party material) and archive/ stay local.
+/*
+
+!/.gitignore
+!/README.md
+!/pipeline/
+
+.DS_Store
+__pycache__/
+*.py[cod]

@@ -1,0 +1,29 @@
+# Whitelist: ignore everything, then allow only code, configs, docs and the README.
+# Records, data and patient-derived outputs stay local.
+/*
+
+!/.gitignore
+!/README.md
+!/pyproject.toml
+!/src/
+!/scripts/
+!/tests/
+!/configs/
+
+# Local only, even inside the allowed folders.
+# configs/*.csv and the research log contain clip filenames (patient study ID + exam date).
+/configs/*.csv
+/docs/RESEARCH_LOG.md
+*.egg-info/
+__pycache__/
+*.py[cod]
+.DS_Store
+.pytest_cache/
+.ruff_cache/
+
+# Ignored by the first rule and kept local:
+#   artifacts/   final model, eye-tracking cache, fold tables (rebuilt by scripts/final/reproduce_final.py)
+#   reports/     per-clip predictions
+#   models/      face_landmarker.task (MediaPipe asset)
+#   .venv/       Python environment
+#   experiments/ leftover caches
